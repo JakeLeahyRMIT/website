@@ -45,6 +45,7 @@
 				<span class="tag is-success">Irish</span>
 			</div>
 		</div>
+		<a href="https://google.com">Put any questions you have here</a>
 		<div id="cf2">
 			<img class="transparent" id="monke0" src="/images/0.jpg">
 			<img class="transparent" id="monke1" src="/images/1.jpg">
@@ -64,13 +65,17 @@ setInterval(() => {
 	} else {
 		monke.classList.add("transparent")
 	}
-	i += 1
-	if (i >= 4) {
-		i = 0
+	if (remove) {
+		i += 1
+	} else {
+		i -= 1
+	}
+	if (i > 3 || i < 0) {
 		remove = !remove
-		for (var ii = 4; ii >= 0; --ii) {
-			monke = document.getElementById("monke" + ii)	
-			monke.classList.remove("transparent")		
+		if (remove) {
+			i = 0
+		} else {
+			i = 3
 		}
 	}
 }, 1000)
