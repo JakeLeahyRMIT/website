@@ -72,25 +72,20 @@
 var i = 0
 var remove = true
 setInterval(() => {
-	var monke = document.getElementById("monke" + i)
-	if (remove) {
-		monke.classList.remove("transparent")
-	} else {
-		monke.classList.add("transparent")
-	}
-	if (remove) {
-		i += 1
-	} else {
-		i -= 1
-	}
 	if (i > 3 || i < 0) {
 		remove = !remove
-		if (remove) {
-			i = 0
-		} else {
-			i = 3
-		}
+		i = 3 * !remove // Shitty math
 	}
+	console.log(i) 
+	var monke = document.getElementById("monke" + i)
+	monke.classList.toggle("transparent")
+	
+	if (remove) { 
+		i += 1 
+	} else { 
+		i -= 1 
+	} 
+
 }, 1000)
 
 </script>
