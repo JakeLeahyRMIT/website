@@ -3,6 +3,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
 </head>
+<script>
+    var audio = new Audio('monke.mp3');
+    function monke() {
+        audio.play();
+    }
+</script>
 <body>
 <div class="logo">
     <img src="https://avatars.githubusercontent.com/u/82853455?v=4" width="80" height="50">
@@ -47,7 +53,9 @@
 
 </body>
 <script>
-
+    document.querySelectorAll(".monke").forEach(x => {
+        x.onmouseenter = monke
+    })
     var i = 0
     var remove = true
     var timer
