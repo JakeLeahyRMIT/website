@@ -1,0 +1,32 @@
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 4%;
+    padding-left: 10%;
+    border-color: yellow;
+    background-color: floralwhite;
+}
+
+.white-round {
+    background-color: olive;
+    border-radius: 10px;
+    width: auto;
+}
+
+/* Monke */
+
+img.monke { /* Make the image sized fixed, make it transition with opacity*/
+    position: absolute;
+    left: 1%;
+    width: 300px;
+    height: 300px;
+    transition: opacity 1s ease-in-out;
+    padding-top: 10000000px;
+}
+
+img.transparent {
+    opacity: 0;
+}
+
+/* End monke */
