@@ -1,66 +1,65 @@
 <!DOCTYPE html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">-->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1 class="title">Jake Leahy</h1>
-<p class="subtitle">
-    My student website which is ununsed
-</p>
-<ul>
-    <li class="column is-narrow">
-        <p class="white-round">Fast</p>
-    </li>
-    <li class="column is-narrow">
-        <p class="white-round">Efficient</p>
-    </li>
-    <li>
-        <p class="white-round">Irish</p>
-    </li>
-</ul>
-<table class="table">
-    <tr>
-        <td><a href="https://google.com">Put any questions you have here</a></td>
-    </tr>
-    <tr>
-        <td><a href="contact.html">Contact page</a></td>
-    </tr>
-</table>
-<h3 class="title">Skills</h3>
-<ol>
-    <li> Nim</li>
-    <li> Java</li>
-    <li> Assorted other languages that I am too lazy to list</li>
-    <li> Git</li>
-    <li> Numbered lists</li>
-</ol>
-<h3 class="title">Monke</h3>
-<!-- All the monke images-->
-<img class="monke transparent" id="monke0" src="images/0.jpg">
-<img class="monke transparent" id="monke1" src="images/1.jpg">
-<img class="monke transparent" id="monke2" src="images/2.jpg">
-<img class="monke transparent" id="monke3" src="images/3.jpg">
+<div class="logo">
+    <h1 class="title">Jake Leahy</h1>
+    <p class="subtitle">
+        My student website which is unused
+    </p>
+</div>
+
+<div class="navigation">
+    <a href="https://google.com">Questions</a>
+    <a href="contact.html">Contact</a>
+    <a href="https://github.com/JakeLeahyRMIT">Github</a>
+</div>
+
+<div class="sidebar">
+    <h3 class="title">Skills</h3>
+    <table style="border: 1px solid black;">
+        <tr>
+            <td class="td-item">Nim</td>
+        </tr>
+        <tr>
+            <td class="td-item">Java</td>
+        </tr>
+        <tr>
+            <td class="td-item">Other languages</td>
+        </tr>
+        <tr>
+            <td class="td-item">Git</td>
+        </tr>
+    </table>
+</div>
+
+<div class="body">
+    <h3 class="title">Monke</h3>
+    <!-- All the monke images-->
+    <img style="z-index: 0" class="monke transparent" id="monke0" src="images/0.jpg">
+    <img style="z-index: 1" class="monke transparent" id="monke1" src="images/1.jpg">
+    <img style="z-index: 2" class="monke transparent" id="monke2" src="images/2.jpg">
+    <img style="z-index: 3" class="monke transparent" id="monke3" src="images/3.jpg">
+</div>
+
 </body>
 <script>
+
     var i = 0
     var remove = true
-    setInterval(() => {
+    var timer
+    timer = setInterval(() => {
         if (i > 3 || i < 0) {
             remove = !remove
             i = 3 * !remove // Shitty math
+            clearInterval(timer)
         }
         console.log(i)
         var monke = document.getElementById("monke" + i)
-        monke.classList.toggle("transparent")
-
-        if (remove) {
-            i += 1
-        } else {
-            i -= 1
-        }
-
+        monke.classList.remove("transparent")
+        i += 1
     }, 1000)
 
 </script>

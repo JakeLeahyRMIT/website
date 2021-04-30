@@ -1,28 +1,64 @@
 body {
-    display: flex;
+    display: grid;
     justify-content: center;
     flex-direction: column;
     padding-top: 4%;
     padding-left: 10%;
-    border-color: yellow;
     background-color: floralwhite;
+    border: 1px solid black;
 }
+
+a:hover {
+    color: cornflowerblue;
+}
+
+.td-item:hover {
+    background-color: grey;
+    border: 3px solid darkslateblue;
+}
+
+@media not screen and (max-width: 768px) {
+    .header {
+        grid-row: 1;
+    }
+
+    .sidebar {
+        grid-column: 1;
+        grid-row: 2;
+
+    }
+
+    .body {
+        grid-row: 2;
+        grid-column: 2;
+    }
+
+    .navigation {
+        grid-row: 1;
+        grid-column: 2;
+    }
+}
+
 
 .white-round {
     background-color: olive;
-    border-radius: 10px;
-    width: auto;
+    border-radius: 2px;
+    width: 100%;
 }
 
 /* Monke */
 
 img.monke { /* Make the image sized fixed, make it transition with opacity*/
-    position: absolute;
+    /*position: absolute;*/
     left: 1%;
     width: 300px;
     height: 300px;
     transition: opacity 1s ease-in-out;
-    padding-top: 10000000px;
+    /*padding-top: 10000000px;*/
+}
+
+img.monke:hover {
+    opacity: 0;
 }
 
 img.transparent {
